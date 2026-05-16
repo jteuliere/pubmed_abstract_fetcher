@@ -164,7 +164,7 @@ class ResultProcessor:
         dict_date = {}
         for pmid in data_dict:
             date = data_dict[pmid].get("date", "No date retrieved.")
-            if date != "No date retrieved." and date.isnumeric():
+            if date != "No date retrieved.":
                 date = int(date)
                 if date not in dict_date:
                     dict_date[date] = set()
@@ -178,9 +178,9 @@ class ResultProcessor:
         """ Filters dict_date and list_date to abstracts published in the inclusive interval (from_year, to_year)
         if provided, or from min_date or to max_date otherwise """
         min_date, max_date = min(dict_date), max(dict_date)
-        if self.from_year and self.from_year.isnumeric():
+        if self.from_year:
             min_date = int(self.from_year)
-        if self.to_year and self.to_year.isnumeric():
+        if self.to_year:
             max_date = int(self.to_year)
         if max_date < min_date:
             min_date, max_date = min(dict_date), max(dict_date)
