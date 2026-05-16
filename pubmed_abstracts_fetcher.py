@@ -32,7 +32,7 @@ def cl_parser():
     parser.add_argument("-p", "--is_pmid_list", action="store_true",
                         help="Optional flag: to use if the query file is a list of PMIDs")
     parser.add_argument("-email", "--email", type=str,
-                        help="Optional: Email address to connect to Entrez (by default will use my old MNHN address",
+                        help="Optional: Email address to connect to Entrez",
                         default="")
     args = parser.parse_args()
     return args
