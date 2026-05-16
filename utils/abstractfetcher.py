@@ -103,7 +103,6 @@ class AbstractFetcher:
                 print("\n    No abstract retrieved.")
         return {}
 
-
     def _efetch_abstracts(self, id_query):
         """ Queries the NCBI API with efetch and returns the results """
         handle = self.connector.efetch(db="pubmed", id=id_query, rettype="abstract", retmod="xml")
@@ -116,7 +115,6 @@ class AbstractFetcher:
             else:
                 print("\n    No abstract retrieved.")
         return {}
-
 
     @staticmethod
     def filter_html():
